@@ -17,7 +17,7 @@
                             </div>
                         </div>
                     </div>
-                @endif
+                @endif 
 
                 <div class="text-muted font-13">
                     <form method="POST" action="{{ route('install.db') }}">

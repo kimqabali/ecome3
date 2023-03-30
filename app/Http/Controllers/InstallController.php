@@ -188,7 +188,7 @@ class InstallController extends Controller
             }
         } else {
             session()->flash('error', 'Database error!');
-            return redirect('step3');
+            return redirect('step3'); 
         }
     }
 
