@@ -279,6 +279,7 @@
                     font-size: 15px
                 }
 
+
             @endif
             @if (Session::get('direction') === 'ltr')
                 .advertis-view-img {
@@ -349,8 +350,30 @@
                 flex-wrap: wrap;
                 align-content: space-around;
             }
+            .testmedias{
+                display: flex;
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+                flex-wrap: wrap;
+            }
             .abd-center{
+                display: flex !important;
                 text-align: center;
+                justify-content: space-around; 
+            }
+            .abds-center{
+
+                align-content: flex-end;
+                text-align: end;
+            }
+           
+        }
+        @media  (max-width: 1326x) {
+            .abdss-center{
+                display: flex !important;
+                text-align: center;
+                justify-content: space-around; 
             }
         }
        
@@ -658,15 +681,14 @@
 
                     </div>
 
-                    <div class="container pb-5 mb-2 mb-md-4 mt-3 rtl"
-                        style="text-align: {{ Session::get('direction') === 'rtl' ? 'right' : 'left' }};">
 
                         <div class="row">
                             <!-- advertis grid-->
+                        @if($Advertis->total())
                             @foreach ($Advertis as $shop)
                                 <div class="col-lg-12 px-2 pb-4">
                                     <div class="card-body shadow relative-box" style="width: 100%">
-                                        <div class="direction_advertis">
+                                        <div class="direction_advertis testmedias">
                                             @if ($shop->image)
                                                 <img style="vertical-align: middle; border-radius: 3%;"
                                                     class="advertis-view-img"
@@ -686,9 +708,9 @@
                                                 <div class="text-dark">
                                                     <h1 class="font-weight-bold small">
                                                         {{ \App\CPU\translate('required_') }}
-                                                        {{ Str::limit($shop->name, 20) }}
+                                                        {{ Str::limit($shop->name, 14) }}
                                                         {{ \App\CPU\translate('to work_for') }}
-                                                        {{ Str::limit($shop->advertiseType->name, 20) }}</h1>
+                                                        {{ Str::limit($shop->advertiseType->name, 14) }}</h1>
                                                     <p class=""> {{ $shop->StateAdvertis->name }} ,
                                                         {{ $shop->CityAdvertis->name }} , {{ $shop->Governorate->name }}
                                                     </p>
@@ -766,17 +788,25 @@
                                                             <i class="fa fa-heart-o" id="d{{ $shop['id']}}" onclick="changeClass('{{ $shop['id'] }}')" aria-hidden="true"></i>
                                                         </button>
                                         @endif
-                                        <p class="mb-0 position-date">{{ $shop->created_at->diffForHumans() }}</p>
+
+                                      
+                                        <p class="mb-0 position-date abds-center">{{ $shop->created_at->diffForHumans() }}</p>
 
                                     </div>
 
                                 </div>
                             @endforeach
-
+                        @else
+                                <div class="col-md-12 m-2 m-md-0 d-flex  align-text-center abd-center abdss-center ">  
+                                            <h6 class="text-muted">
+                                                {{\App\CPU\translate('No data found')}}.
+                                            </h6>
+                                    </div>
+                        @endif
                            
                         </div>
 
-                    </div>
+                    
 
                    
 

@@ -23,13 +23,13 @@ class ActivationCheckMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($request->is('admin/auth/login')) {
-            $response = $this->actch();
-            $data = json_decode($response->getContent(), true);
-            if (!$data['active']) {
-                return Redirect::away(base64_decode('aHR0cHM6Ly82YW10ZWNoLmNvbS9zb2Z0d2FyZS1hY3RpdmF0aW9u'))->send();
-            }
-        }
+        // if ($request->is('admin/auth/login')) {
+        //     $response = $this->actch();
+        //     $data = json_decode($response->getContent(), true);
+        //     if (!$data['active']) {
+        //         return Redirect::away(base64_decode('aHR0cHM6Ly82YW10ZWNoLmNvbS9zb2Z0d2FyZS1hY3RpdmF0aW9u'))->send();
+        //     }
+        // }
         return $next($request);
     }
 }
