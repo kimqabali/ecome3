@@ -52,7 +52,7 @@
                                     <select name="career_sector_id" id="career_sector_id" class="js-example-placeholder-single js-example-basic-single js-states js-example-responsive form-control color-var-select" autofocus required>
                                         <option value="" disabled selected> {{ \App\CPU\translate('Select the career sector')}}</option>
                                         @foreach ($CareerSector as $CareerSectors)
-                                            <option value="{{ $CareerSectors->id }}">{{ $CareerSectors->name }}</option>
+                                            <option value="{{ $CareerSectors->id }}">{{ $CareerSectors->name }}</option> 
                                         @endforeach
                                     </select>
 

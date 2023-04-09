@@ -222,14 +222,14 @@
 
         <div class="container rtl abd-center">
             <div class="topbar-text dropdown d-md-none {{ Session::get('direction') === 'rtl' ? 'mr-auto' : 'ml-auto' }}">
-            <a class="topbar-link btn btn-info btn-sm" href="tel: {{ $web_config['phone']->value }}"><i class="fa fa-phone"></i>{{ $web_config['phone']->value }}</a>
+            <a class="topbar-link btn btn-info btn-sm" href="tel: {{  $customerDetail->phone ?? '' }}"><i class="fa fa-phone"></i>{{  $customerDetail->phone ?? '' }}</a>
             </div>
             <div class="d-none d-md-block {{ Session::get('direction') === 'rtl' ? 'mr-2' : 'mr-2' }} text-nowrap">
-            <a class="topbar-link d-none d-md-inline-block btn btn-info btn-sm" href="tel:{{ $web_config['phone']->value }}"><i class="fa fa-phone"></i>{{ $web_config['phone']->value }}</a>
+            <a class="topbar-link d-none d-md-inline-block btn btn-info btn-sm" href="tel:{{ $customerDetail->phone ?? '' }}"><i class="fa fa-phone"></i>{{ $customerDetail->phone ?? '' }}</a>
             </div>
         </div>
         <div class="d-flex testmedia mb-3 mb-md-0 align-items-center">
-            <h5 class="font-name"style="text-align:justify; margin-left: 11px;">{{$customerDetail->f_name.' '.$customerDetail->l_name}}</h5>
+            <h5 class="font-name"style="text-align:justify; margin-left: 11px;">{{$customerDetail->name ?? ''}}</h5>
             <img id="blah"
                 class="rounded-circle border __inline-48"
                 onerror="this.src='{{asset('public/assets/front-end/img/image-place-holder.png')}}'"

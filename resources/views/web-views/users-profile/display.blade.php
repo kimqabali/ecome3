@@ -684,7 +684,7 @@
 
                         <div class="row">
                             <!-- advertis grid-->
-                        @if($Advertis->total())
+                        
                             @foreach ($Advertis as $shop)
                                 <div class="col-lg-12 px-2 pb-4">
                                     <div class="card-body shadow relative-box" style="width: 100%">
@@ -726,17 +726,17 @@
                                                         <div
                                                             class="topbar-text dropdown d-md-none {{ Session::get('direction') === 'rtl' ? 'mr-auto' : 'ml-auto' }}">
                                                             <a class="topbar-link btn btn-info btn-sm"
-                                                                href="tel: {{ $web_config['phone']->value }}">
+                                                                href="tel: {{ $shop->actorDetail->phone }}">
                                                                 <i class="fa fa-phone"></i>
-                                                                {{ $web_config['phone']->value }}
+                                                                {{ $shop->actorDetail->phone }}
                                                             </a>
                                                         </div>
                                                         <div
                                                             class="d-none d-md-block {{ Session::get('direction') === 'rtl' ? 'mr-2' : 'mr-2' }} text-nowrap">
                                                             <a class="topbar-link d-none d-md-inline-block btn btn-info btn-sm"
-                                                                href="tel:{{ $web_config['phone']->value }}">
+                                                                href="tel:{{ $shop->actorDetail->phone }}">
                                                                 <i class="fa fa-phone"></i>
-                                                                {{ $web_config['phone']->value }}
+                                                                {{$shop->actorDetail->phone }}
                                                             </a>
                                                         </div>
                                                     </div>
@@ -796,13 +796,9 @@
 
                                 </div>
                             @endforeach
-                        @else
-                                <div class="col-md-12 m-2 m-md-0 d-flex  align-text-center abd-center abdss-center ">  
-                                            <h6 class="text-muted">
-                                                {{\App\CPU\translate('No data found')}}.
-                                            </h6>
-                                    </div>
-                        @endif
+                    
+                               
+                        
                            
                         </div>
 

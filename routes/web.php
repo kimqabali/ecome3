@@ -104,7 +104,7 @@ Route::group(['namespace' => 'Web','middleware'=>['maintenance_mode']], function
    Route::get('disblayAdvertisement', 'UserProfileController@disblayAdvertisement')->name('disblayAdvertisement');
    Route::get('desblayAdvertisement/{id}', 'UserProfileController@disblay_Advertisement')->name('desblayAdvertisement');
    Route::get('MyAdvertismentDisblay', 'UserProfileController@MyAdvertis')->name('MyAdvertisment');
-
+ 
 
    Route::get('wishlists_advertis', 'UserProfileController@wishlistsAdvertisment')->name('wishlistsAdvertisment');
    Route::post('saveAdvertis', 'UserProfileController@saveAdvertisment')->name('saveAdvertisment');

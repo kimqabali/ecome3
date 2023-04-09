@@ -116,13 +116,14 @@ Route::group(['namespace' => 'api\v1', 'prefix' => 'v1', 'middleware' => ['api_l
         Route::get('get-restricted-zip-list','CustomerController@get_restricted_zip_list');
         Route::get('AddAdvertisementApi', [App\Http\Controllers\Web\UserProfileController::class ,   'AddAdvertisementApi']);
         Route::post('storeAdvertisementApi', [App\Http\Controllers\Web\UserProfileController::class , 'storeAdvertisementApi']);
+        //Route::get('disblayAdvertisementApi', 'UserProfileController@disblayAdvertisementApi');
         Route::get('disblayAdvertisementApi', [App\Http\Controllers\Web\UserProfileController::class , 'disblayAdvertisementApi']);
         Route::get('disblay_AdvertisementApi/{id}', [App\Http\Controllers\Web\UserProfileController::class , 'disblay_AdvertisementApi']);
         Route::post('addtofavorate', [App\Http\Controllers\Web\UserProfileController::class , 'addtofavorate']);
       
    
  
-   
+    
      
         Route::post('search_AdvertAPI', [App\Http\Controllers\Web\UserProfileController::class, 'search_AdvertAPI']);
         Route::post('search_MyAdvertAPI', [App\Http\Controllers\Web\UserProfileController::class, 'search_MyAdvertAPI']);

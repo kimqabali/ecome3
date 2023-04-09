@@ -374,7 +374,7 @@
             "pageLength": {{\App\CPU\Helpers::pagination_limit()}}
         });
     });
-
+    
  </script>
 
 

@@ -7,12 +7,24 @@
                 <div class="product">
                     <div class="card">
                         <div class="row g-2"> 
+                            
                             <div class="wishlist_product_img col-md-4 col-xl-2 col-lg-3 col-sm-4">
-                                <a href="{{route('desblayAdvertisement',$advertis->id)}}" class="d-block h-100">
-                                    <img class="__img-full"
-                                     src="{{ asset('public/uploads/'.$advertis->image[0]) }}"
-                                    onerror="this.src='{{asset('public/assets/front-end/img/image-place-holder.png')}}'" alt="wishlist" >
-                                </a>
+
+                                @if ($advertis->image)
+                                    <a href="{{route('desblayAdvertisement',$advertis->id)}}" class="d-block h-100">
+                                        <img class="__img-full"
+                                        src="{{ asset('public/uploads/'.$advertis->image[0]) }}"
+                                        onerror="this.src='{{ asset('public/assets/front-end/img/image-place-holder.png') }}'"
+                                        alt="wishlist" >
+                                    </a>
+                                @else
+                                    <a href="{{route('desblayAdvertisement',$advertis->id)}}" class="d-block h-100">
+                                        <img class="__img-full"
+                                        src=""
+                                        onerror="this.src='{{ asset('public/assets/front-end/img/image-place-holder.png') }}'">          
+                                    </a>
+                                @endif
+                               
                             </div>
                             <div class="wishlist_product_desc align-self-center col-sm-8 col-md-8 col-xl-10 col-lg-9 py-3 px-sm-4" >
                                 <div class="font-name">

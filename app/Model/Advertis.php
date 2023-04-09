@@ -19,7 +19,7 @@ class Advertis extends Model
         'Require_driver_license', 'gender', 'career_sector_id', 'job_title_id', 'advertise_type_id',
         'education_degree_id', 'type_contract_id', 'work_day_id', 'type_work_hour_id', 'salary_id',
         'experience_id', 'nationality_id', 'city_advertis_id', 'state_advertis_id','governorates_id', 'image', 'actor_type',
-        'actor_id',
+        'actor_id','skill_id'
     ];
 
 

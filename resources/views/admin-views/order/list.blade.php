@@ -26,7 +26,7 @@
                     {{\App\CPU\translate('Orders')}}
                 </h2>
                 <span class="badge badge-soft-dark radius-50 fz-14">{{$orders->total()}}</span>
-            </div>
+            </div>control
             <!-- End Page Title -->
 
             <!-- Order States -->
@@ -47,8 +47,8 @@
                                         <option value="POS" {{ $filter == 'POS' ? 'selected' : '' }}>POS</option>
                                         @endif
                                     </select>
-                                </div>
-                                <div class="col-sm-6 col-md-3">
+                                </div> 
+                                <div class="col-sm-6 col-md-3"> 
                                     <div class="form-floating">
                                         <input type="date" name="from" value="{{$from}}" id="from_date"
                                             class="form-control">
